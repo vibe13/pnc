@@ -507,6 +507,7 @@ public class BuildConfigurationEndpoint extends AbstractEndpoint<BuildConfigurat
         return this.fromSingleton(buildRecordProvider.getLatestBuildRecord(id));
     }
 
+    //TODO remove once the equivalent rsql query (pnc-rest/rest/builds?q=buildConfigurationAudited.idRev.id=={id}) is ready and tested
     @ApiOperation(value = "Get all BuildRecords (running and archived) associated with this Build Configuration, returns empty list if no build records are found")
     @ApiResponses(value = {
             @ApiResponse(code = SUCCESS_CODE, message = SUCCESS_DESCRIPTION, response = BuildRecordPage.class),

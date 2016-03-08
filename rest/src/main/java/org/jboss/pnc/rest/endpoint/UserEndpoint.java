@@ -193,6 +193,7 @@ public class UserEndpoint extends AbstractEndpoint<User, UserRest> {
        return super.update(id, userRest);
     }
 
+    //TODO remove once the equivalent rsql query (pnc-rest/rest/builds?q=user.id=={id}) is ready and tested
     @ApiOperation(value = "Get all BuildRecords (running and archived) triggered by this User, returns empty list if no build records are found")
     @ApiResponses(value = {
             @ApiResponse(code = SUCCESS_CODE, message = SUCCESS_DESCRIPTION, response = BuildRecordPage.class),

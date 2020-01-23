@@ -17,14 +17,11 @@
  */
 package org.jboss.pnc.model;
 
-import org.hibernate.annotations.Cache;
-import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.hibernate.annotations.Type;
 import org.hibernate.envers.Audited;
 import org.hibernate.envers.NotAudited;
 import org.hibernate.envers.RelationTargetAuditMode;
 
-import javax.persistence.Cacheable;
 import javax.persistence.CascadeType;
 import javax.persistence.CollectionTable;
 import javax.persistence.Column;
@@ -77,8 +74,6 @@ import java.util.stream.Collectors;
  * @author avibelli
  * @author Jakub Bartecek
  */
-@Cacheable
-@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 @Entity
 @Audited
 @Table(uniqueConstraints = @UniqueConstraint(name = "uk_build_configuration_name", columnNames = {"name", "active"}),

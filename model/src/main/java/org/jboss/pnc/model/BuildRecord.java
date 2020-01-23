@@ -17,8 +17,6 @@
  */
 package org.jboss.pnc.model;
 
-import org.hibernate.annotations.Cache;
-import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.hibernate.annotations.LazyGroup;
 import org.hibernate.annotations.Type;
 import org.jboss.pnc.common.security.Md5;
@@ -28,7 +26,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.persistence.Basic;
-import javax.persistence.Cacheable;
 import javax.persistence.CascadeType;
 import javax.persistence.CollectionTable;
 import javax.persistence.Column;
@@ -75,8 +72,6 @@ import static java.nio.charset.StandardCharsets.UTF_8;
  * that was used to run the build, the system Image where is was run in, and is mapped to a BuildRecordSet, that encapsulates
  * the set of buildRecord that compose a Product
  */
-@Cacheable
-@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 @Entity
 @Table(indexes = {
         @Index(name = "idx_buildrecord_user", columnList = "user_id"),

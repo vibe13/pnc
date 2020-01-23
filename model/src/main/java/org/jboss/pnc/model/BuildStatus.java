@@ -17,12 +17,7 @@
  */
 package org.jboss.pnc.model;
 
-import javax.persistence.Cacheable;
 import javax.persistence.Transient;
-
-import org.hibernate.annotations.Cache;
-import org.hibernate.annotations.CacheConcurrencyStrategy;
-import org.hibernate.annotations.Immutable;
 
 /**
  * Status of a running or completed build.
@@ -30,9 +25,6 @@ import org.hibernate.annotations.Immutable;
  * @author Jakub Bartecek &lt;jbartece@redhat.com&gt;
  *
  */
-@Immutable
-@Cacheable
-@Cache(usage = CacheConcurrencyStrategy.READ_ONLY)
 public enum BuildStatus {
     /**
      * Build completed successfully
